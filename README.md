@@ -12,6 +12,8 @@ Projetos da Geracao.AI
 | Jogo Xadrez | Jogo de xadrez | [Acessar](https://geracao-ai.github.io/jogo-xadrez/) |
 | Prova Daniel | Provas interativas para crianças | [Acessar](https://geracao-ai.github.io/prova-daniel/) |
 | Raspberry Pi | Projetos com Raspberry Pi | [Acessar](https://geracao-ai.github.io/raspberry-pi/) |
+| Quadro Verde | Um quadro verde para desenhar a giz | [Acessar](https://geracao-ai.github.io/quadro-verde) |
+| Duelo de Contas | Cabo de Guerra Aritmético | [Acessar](https://geracao-ai.github.io/duelo-de-contas) |
 
 ---
 
