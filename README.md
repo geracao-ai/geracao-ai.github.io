@@ -14,6 +14,8 @@ Projetos da Geracao.AI
 | Raspberry Pi | Projetos com Raspberry Pi | [Acessar](https://geracao-ai.github.io/raspberry-pi/) |
 | Quadro Verde | Um quadro verde para desenhar a giz | [Acessar](https://geracao-ai.github.io/quadro-verde) |
 | Duelo de Contas | Cabo de Guerra Aritmético | [Acessar](https://geracao-ai.github.io/duelo-de-contas) |
+| Passa Adiante | O desapego do seu grupo | [Acessar](https://passa-adiante-web.danieldopulo.workers.dev/) |
+| Até Dormir | Contar carneirinhos de verdade (em construção) | [Gravador](https://gravador-ate-dormir.danieldopulo.workers.dev/) |
 
 ---
 
