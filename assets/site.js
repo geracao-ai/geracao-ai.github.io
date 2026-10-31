@@ -86,57 +86,5 @@ function montarCarrossel(carrossel) {
   return { carrossel, realinhar: () => ir(atual, 'auto') };
 }
 
-// ---------- Índice de projetos ----------
-const linhas = [...document.querySelectorAll('.indice li')];
-const previaFixa = document.querySelector('.previa');
 const carrosseis = [...document.querySelectorAll('.carrossel')].map(montarCarrossel);
-const telaLarga = matchMedia('(min-width: 961px)');
-
-// Na tela larga os carrosséis ficam na coluna fixa; no celular, cada um no seu projeto.
-function posicionarCarrosseis() {
-  carrosseis.forEach(({ carrossel, realinhar }, i) => {
-    if (telaLarga.matches) previaFixa.append(carrossel);
-    else linhas[i].prepend(carrossel);
-    realinhar();
-  });
-}
-
-function ativar(indice) {
-  linhas.forEach((linha, i) => linha.classList.toggle('ativa', i === indice));
-  carrosseis.forEach(({ carrossel }, i) => carrossel.classList.toggle('ativa', i === indice));
-}
-
-linhas.forEach((linha, i) => {
-  linha.addEventListener('pointerenter', () => ativar(i));
-  linha.addEventListener('focusin', () => ativar(i));
-});
-posicionarCarrosseis();
-telaLarga.addEventListener('change', posicionarCarrosseis);
 addEventListener('resize', () => carrosseis.forEach(({ realinhar }) => realinhar()));
-ativar(0);
-
-// Quem só rola a página também troca a prévia: vale a linha mais perto do meio da tela.
-let rolagemPendente = false;
-
-function acompanharRolagem() {
-  rolagemPendente = false;
-  if (getComputedStyle(previaFixa).display === 'none') return;
-  const meio = innerHeight * 0.45;
-  let maisPerto = 0;
-  let menorDistancia = Infinity;
-  linhas.forEach((linha, i) => {
-    const caixa = linha.getBoundingClientRect();
-    const distancia = Math.abs(caixa.top + caixa.height / 2 - meio);
-    if (distancia < menorDistancia) {
-      menorDistancia = distancia;
-      maisPerto = i;
-    }
-  });
-  ativar(maisPerto);
-}
-
-addEventListener('scroll', () => {
-  if (rolagemPendente) return;
-  rolagemPendente = true;
-  requestAnimationFrame(acompanharRolagem);
-}, { passive: true });
